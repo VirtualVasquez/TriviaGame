@@ -14,12 +14,12 @@
 
         <div class = "jumbotron">
 
-          <!-- centered text -->
+          <!-- heading logo -->
           <img class="center" id="title" src="assets/images/title.png">
           <img class="center" id="trivia" src="assets/images/trivia.png">
 
-
-          <div class = "container" id ="change">
+          <!--start screen-->
+          <div class = "container" id ="start">
           
               <p class="text-center">
               <a class="btn btn-primary btn-lg" href="#" role="button" id="start"> Accept Mission</a>
@@ -27,7 +27,96 @@
           
           </div>
 
-        </div>
+          <!--Questions Container-->
+          <div id = mid_game_container>
+            
+            <!-- Game Timer -->
+            <h2 id = "timer_line">Time Remaining: <span id = "timer_number">60 Seconds</span></h2>
+
+            <!-- Game Questions -->
+
+            <h2>1. What is the name of the Mega Man X's creator?</h2>
+            <!-- Dr.Light -->
+            <input type="radio" name="q1" value="Dr.Wily">Dr.Wily 
+            <input type="radio" name="q1" value="correct">Dr.Light
+            <input type="radio" name="q1" value="Dr.Cossack">Dr.Cossack 
+            <input type="radio" name="q1" value="Dr.Cain">Dr.Cain 
+        
+
+            <h2>2. In Mega Man X2, which boss stage is reused for the final fight against Sigma?</h2>
+            <!-- Magna Centipede -->
+            <input type="radio" name="q2" value="correct">Magna Centipede 
+            <input type="radio" name="q2" value="Wire Sponge">Wire Sponge 
+            <input type="radio" name="q2" value="Overdrive Ostrich">Overdrive Ostrich 
+            <input type="radio" name="q2" value="Crystal Snail">Crystal Snail 
+
+            <h2>3. In Mega Man X3, what is the max. number of capsules that can be used in a single playthrough?</h2>
+            <!-- 5 -->
+            <input type="radio" name="q3" value="2">2 
+            <input type="radio" name="q3" value="4">4 
+            <input type="radio" name="q3" value="correct">5 
+            <input type="radio" name="q3" value="9">9
+
+            <h2>4. What is the name of the all-reploid army in Mega Man X4?</h2>
+            <!-- Repliforce -->
+            <input type="radio" name="q4" value="The Resistance">The Resistance 
+            <input type="radio" name="q4" value="The Guardians">The Guardians 
+            <input type="radio" name="q4" value="correct">Repliforce 
+            <input type="radio" name="q4" value="X-Hunters">X
+
+            <h2>5. In English version of Mega Man X5, all 8 main bosses are named after members of which rockband?</h2>
+            <!-- Guns'N'Roses -->
+            <input type="radio" name="q5" value="Aerosmith">Aerosmith 
+            <input type="radio" name="q5" value="The Beatles">The Beatles 
+            <input type="radio" name="q5" value="correct">Guns'N'Roses 
+            <input type="radio" name="q5" value="Nirvanva">Nirvana
+
+            <h2>6. The defeat of this character lets you skip to the final stages in Mega Man X6.</h2>
+            <!-- High Max -->
+            <input type="radio" name="correct" value="correct">High Max 
+            <input type="radio" name="q6" value="Vile">Vile 
+            <input type="radio" name="q6" value="Serges">Serges 
+            <input type="radio" name="q6" value="Byte">Byte
+
+            <h2>7. What are the only two characters that can be used at the start of Mega Man X7?</h2>
+            <!-- Zero and Axl -->
+            <input type="radio" name="q7" value="X and Zero">X and Zero 
+            <input type="radio" name="q7" value="correct">Zero and Axl 
+            <input type="radio" name="q7" value="Iris and Zero">Iris and Zero 
+            <input type="radio" name="q7" value="Axl and Alia">Axl and Alia
+
+            <h2>8. Upon certain conditions, what classic Mega Man boss can be fought in Mega Man X8?</h2>
+            <!-- Cut Man -->
+            <input type="radio" name="q8" value="Bass">Bass 
+            <input type="radio" name="q8" value="Air Man">Air Man 
+            <input type="radio" name="q8" value="correct">Cut Man 
+            <input type="radio" name="q8" value="Duo">Duo
+
+            <h2>9. What is the name of Zero's unlockable ultimate armor variant?</h2>
+            <!-- Absolute Zero -->
+            <input type="radio" name="q9" value="Zero Hour">Zero Hour 
+            <input type="radio" name="q9" value="Zero Nightmare">Zero Nightmare 
+            <input type="radio" name="q9" value="Survivor Zero">Survivor Zero 
+            <input type="radio" name="q9" value="correct">Absolute Zero
+
+            <h2>10. What is the name of the secret attack that X can acquire in Maverick Hunter X? </h2>
+            <!-- Hadouken -->
+            <input type="radio" name="q10" value="correct">Hadouken 
+            <input type="radio" name="q10" value="Rolling Thunder">Rolling Thunder 
+            <input type="radio" name="q10" value="Chaos Blast">Chaos Blast 
+            <input type="radio" name="q10" value="Limit Break">Limit Break
+
+          </div>
+
+          <!-- End of the game -->
+          <div id = end_container>
+
+            <h1 id = "done">Mission Results</h1>
+
+            <h2>Correct Answers: <span id = "correct_answers">0</span></h2>
+            <h2>Incorrect Answers: <span id = wrong_answers>0</span></h2>
+            <h2>Unanswered: <span id = "unanswered">0</span></h2>
+          </div>
 
     <div class = "container"> 
 

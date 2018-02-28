@@ -1,64 +1,69 @@
-//FUNCTIONS AND VARIABLES
-//============================================
-var triviaQuestions = [{
-	question: "What is the name of the Mega Man X's creator?",
-	answerList: ["Dr. Wily", "Dr. Light", "Dr. Cossack", "Dr. Hikari"],
-	answer: 1
-},{
-	question: "In Mega Man X2, which boss stage is reused for the final fight against Sigma?",
-	answerList: ["Magna Centipede", "Wire Sponge", "Overdrive Ostrich", "Crystal Snail"],
-	answer: 0
-},{
-	question: "In Mega Man X3, what is the maximum number of upgrade capsules that can be used per playthrough?",
-	answerList: ["5", "4", "9", "6"],
-	answer: 0
-},{
-	question: "In Mega Man X4, what is the name of the all-reploid army?",
-	answerList: ["The Resistance", "The Guardians", "Repliforce", "X-Hunters"],
-	answer: 2
-},{
-	question: "In English version of Mega Man X5, all 8 main bosses named after members of which rockband? ",
-	answerList: ["Aerosmith", "The Beatles", "Nirvana", "Guns'N'Roses"],
-	answer: 3
-},{
-	question: "In Mega Man X6, the 8 main bosses can be skipped altogether by beating which hidden boss?",
-	answerList: ["High Max", "Vile", "Serges", "Byte"],
-	answer: 0
-},{
-	question: "In Mega Man X7, what are the only two characters you can use in the beginning?",
-	answerList: ["X and Zero", "Zero and Axl", "Layer and Zero", "Axl and Alia"],
-	answer: 1
-},{
-	question: "Upon certain conditions, what classic Mega Man boss can be fought in Mega Man X8?",
-	answerList: ["Bass", "Air Man", "Cut Man", "Duo"],
-	answer: 2
-},{
-	question: "Maverick Hunter?",
-	answerList: ["Amy Poehler", "Phyllis Smith", "Mindy Kaling", "Phyllis Vance"],
-	answer: 1
-},{
-	question: "Command Mission",
-	answerList: ["Hopper", "Woody", "Marlin", "Buzz Lightyear"],
-	answer: 3
-},
-];
+//Variables
+//==========================================================
+
+var timer = 60;
+var correctCount = 0;
+var wrongCount = 0;
+var unansweredCount = 0;
+
+var answerInputs =[Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10];
+
+//Main Process
+//===========================================================
+
+$(document).ready(function(){
+
+	//Load the HTML with only the start button present
+	$("#mid_game_container").hide();
+	$("#end_container").hide();
 
 
+	$("#start_button").on("click", function(){
 
+	// Hide the start Div from the user
+	$("#start_container").hide();
 
-//when button clicked
-	//html changes to 8 MC questions and submit button
-	$('#start').click()
-	//timer starts
+	// Show the Game Div
+	$("#mid_game_container").show();
 
+	startCountdown();
+	return;
 
+	});
 
-//when answer is clicked
-	//record answer as right or wrong for question
+    function timeUp(){
+		// Checked values of Radio Buttons
+		var Q1 = $('input:radio[name="q1"]:checked').val();
+		var Q2 = $('input:radio[name="q2"]:checked').val();
+		var Q3 = $('input:radio[name="q3"]:checked').val();
+		var Q4 = $('input:radio[name="q4"]:checked').val();
+		var Q5 = $('input:radio[name="q5"]:checked').val();
+		var Q6 = $('input:radio[name="q6"]:checked').val();
+		var Q7 = $('input:radio[name="q7"]:checked').val();
+		var Q8 = $('input:radio[name="q8"]:checked').val();
+		var Q9 = $('input:radio[name="q9"]:checked').val();
+		var Q10 = $('input:radio[name="q10"]:checked').val();
 
-//if time runs out OR submit button is clicked
-	//change html to results
-		//correct answers
-		//incorrect answers
-		// unanswered questions
-	//add a restart button (if you can)
+        for (i = 0, i < answerInputs.length, i++){
+		if(answerInputs[i] == undefined){
+			unansweredCount++;
+		}
+		else if(answerInputs[i] == "correct"){
+			correctCount++;
+		}
+		else{
+			wrongCount++;
+		}
+
+		//After answers are checked and tallied, display score numbers
+		$('#correct_answers').html(correctCount);
+		$('#wrong_answers').html(wrongCount);
+		$('#unanswered').html(unansweredCount);
+
+		//reveal completed score
+		$("#end_container").show();
+
+	    }
+    }
+
+});
