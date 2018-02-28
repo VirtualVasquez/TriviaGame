@@ -34,3 +34,8 @@ html, body{
 a{
 	margin: 10%;
 }
+
+#doneButton{
+    display: block;
+    align-content: center;
+}
