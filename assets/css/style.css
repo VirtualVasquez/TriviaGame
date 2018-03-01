@@ -1,5 +1,5 @@
 html, body{
-	background-image: url("../../assets/images/blue.jpg");
+	background-image: url("../../assets/images/trueblue.jpg");
 	height: 100%;
 }
 
@@ -33,6 +33,11 @@ html, body{
 
 a{
 	margin: 10%;
+}
+
+input{
+    font-size: 14px;
+    margin-right: 10px;
 }
 
 #doneButton{

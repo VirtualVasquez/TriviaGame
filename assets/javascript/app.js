@@ -81,29 +81,39 @@ $(document).ready(function(){
 
     function timeUp(){
 		//Checked values of Radio Buttons
-		Q1 = $('input:radio[name="q1"]:checked').val();
-		Q2 = $('input:radio[name="q2"]:checked').val();
-		Q3 = $('input:radio[name="q3"]:checked').val();
-		Q4 = $('input:radio[name="q4"]:checked').val();
-		Q5 = $('input:radio[name="q5"]:checked').val();
-		Q6 = $('input:radio[name="q6"]:checked').val();
-		Q7 = $('input:radio[name="q7"]:checked').val();
-		Q8 = $('input:radio[name="q8"]:checked').val();
-		Q9 = $('input:radio[name="q9"]:checked').val();
-		Q10 = $('input:radio[name="q10"]:checked').val();
+		var Q1 = $('input:radio[name="q1"]:checked').val();
+		var Q2 = $('input:radio[name="q2"]:checked').val();
+		var Q3 = $('input:radio[name="q3"]:checked').val();
+		var Q4 = $('input:radio[name="q4"]:checked').val();
+		var Q5 = $('input:radio[name="q5"]:checked').val();
+		var Q6 = $('input:radio[name="q6"]:checked').val();
+		var Q7 = $('input:radio[name="q7"]:checked').val();
+		var Q8 = $('input:radio[name="q8"]:checked').val();
+		var Q9 = $('input:radio[name="q9"]:checked').val();
+		var Q10 = $('input:radio[name="q10"]:checked').val();
 
 		var answerInputs =[Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10];
         
-        for(i = 0, i < answerInputs.length, i++){
+        for(i = 0; i < answerInputs.length; i++){
 			if(answerInputs[i] == undefined){
 				unansweredCount++;
-			};
+			}
 			else if(answerInputs[i] == "correct"){
 				correctCount++;
-			};
+			}
 			else{
 				wrongCount++;
-			};       	
+			}       	
         };
+
+		// After answers are validated, display the score results
+		$('#correctAnswers').html(correctCount);
+		$('#wrongAnswers').html(wrongCount);
+		$('#unanswered').html(unansweredCount);
+
+
+		// Show the completed Score Div
+		$("#endContainer").show();
+
     };
 });
