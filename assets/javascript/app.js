@@ -19,65 +19,63 @@ $(document).ready(function(){
 	$("#endContainer").hide();
 
 	$("#start").on("click", function(){
-
 		// Hide the start Div from the user
 		$("#start").hide();
 
 
 		// Show the Game Div
 		$("#midGameContainer").show();
-
+		$('#timerNumber').html(count + " Seconds");
 		startCountdown();
 		return;
 
-	});	
+	});
 
+	$("#restart").on("click", function(){
+		count = 60;
+		correctCount = 0;
+		wrongCount = 0;
+		unansweredCount = 0;
+		$("#endContainer").hide();
+		$("#midGameContainer").show();
+		$('#timerNumber').html(count + " Seconds");
+		startCountdown();
+		return;
+	})	
 
 	// Counts down and displays the time to the user
 	function countdown(){
-
-		// Decrement the counter, down from 60 seconds
-		count--;
-
+    	// Decrement the counter, down from 60 seconds
+		count = count - 1;
 		// Display the count to the user in the DOM
-    	$('#timerNumber').html(count + " Seconds");
-
-    	// ----------- Handle Cases for Time ar 0 Seconds -----------
-			// User finishes before time is up and clicks done
-			$("#finish").on("click", function(){
-
-			// Stop the countdown and run the timeUp function
-			//stopTime(); <---This didn't work
-			count = 0; 
-			return;
-
-			});
-
-
+		$('#timerNumber').html(count + " Seconds")
 			// Finish the game after the timer reaches 0
-			if(count == -1){
-
+			if(count == 0){
+				 clearInterval(tminus);
 				// Collect the radio inputs
 				timeUp();
-
 				// Hide the game Div from the user
 				$("#midGameContainer").hide();
-
-			}    	
-
+			};
     };
 
-	// Show the countdown, increment is 1 second
+    // Show the countdown, increment is 1 second
 	function startCountdown(){
 		//repeats the decrease of the var count every 1000ms
-		setInterval(countdown, 1000);
-
+		tminus = setInterval(countdown, 1000);
 	};
 
-	// Stop the countdown. EDIT: This didn't work.
-	//function stopTime(){
-	//	clearInterval(startCountdown);
-	//}
+		// User finishes before time is up and clicks done
+		$("#finish").on("click", function(){
+			clearInterval(tminus);
+		count = 0; 
+		// Collect the radio inputs KEEP THIS
+		timeUp();
+		// Hide the game Div from the user KEEP THIS
+		$("#midGameContainer").hide();
+		});    	
+
+
 
     function timeUp(){
 		//Checked values of Radio Buttons
