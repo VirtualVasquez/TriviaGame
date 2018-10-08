@@ -1,18 +1,14 @@
-# Trivia Game
-Week 5 Assignment: Trivia Game
+# Mega Trivia X
 
-## Mega Man X Trivia
+How well do you know the Mega Man X series?  
 
-This is an assignment that was given during the fifth week of University of Miami Coding bootcamp. This particular trivia game is the easier variant of two versions we could have done. All the questions appear upon hitting the "Mission Start" button.
+## Motivation
 
-## Purpose
-
-The purpose of this was to learn how to implement timers into JavaScript. For the most part, I was successful, but I failed to get clearInterval() to take work properly, so I had to find a work around. 
+The purpose of this was to learn how to implement timed events with javascript/jQuery, as well as DOM manipulation. These actions are some of the fundamental asepcts of nearly all web applications, DOM manipulation more so than timed events. Though it is not _always_ necessary to have DOM manipulation in a web application, any self-respecting web developer should at least know how to implement it in some shape or form. 
 
 ## Links
 
 To play the game immediately: https://virtualvasquez.github.io/TriviaGame/#
-To see my portfolio (still in progress):https://virtualvasquez.github.io/Basic-Portfolio/portfolio.html 
 
 ## Screenshots
 ![Start](assets/images/start.png)
@@ -22,5 +18,12 @@ How the HTML looks upon loading
 Upper half of the questions displayed once the "Accept Mission" button is pressed.
 
 ![Results](assets/images/results.png)
-Once time is up or "End Mission" button is pressed, this screen appears.
+Once time is up or "End Mission" button is pressed, this screen appears. The restart button will take you straight to the quiz, not the start screen. 
 
+## Technologies Used
+
+* HTML
+* CSS
+* Bootstrap
+* Javascript
+* jQuery
