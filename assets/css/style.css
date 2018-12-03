@@ -1,20 +1,12 @@
 html, body{
 	background-image: url("../../assets/images/trueblue.jpg");
-	height: 100%;
-}
-
-.container{
-    width: 75%;
-    position: relative;
 }
 
 .jumbotron{
-    background-color: cyan !important;
-    vertical-align: middle;  /* vertical alignment of the inline element */
+    background-color: cyan ;
     width: 100%;
     margin-top: 10%;
     margin-bottom: 20%;
-    position: sticky;
 }
 
 .center {
@@ -23,24 +15,10 @@ html, body{
     margin-right: auto;
 }
 
-#title{
-	width: 50%;
-}
-
-#trivia{
-	width: 30%;
-}
-
 a{
 	margin: 10%;
 }
 
-input{
+.mc{
     font-size: 14px;
-    margin-right: 10px;
-}
-
-#doneButton{
-    display: block;
-    align-content: center;
 }
